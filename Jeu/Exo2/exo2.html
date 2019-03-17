@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>New</title>
+</head>
+<body>
+      
+
+<script>
+	var x = Math.floor(Math.random() * 100) + 1;
+	var y = prompt("Entrer un nombre svp");
+	
+		
+		//alert(x);
+		//alert(y);
+		for (var i = 4; i > 0; i--) {
+			if (y < x) {
+			alert("Le nombre saisi est petit");
+			y = prompt("Entrer encore un nombre svp, il vous reste "+i+" chance");
+		}
+		if (y > x) {
+			alert("Le nombre saisi est trop grand");
+			y = prompt("Entrer encore un nombre svp il vous reste "+i+" chance");
+		}
+		if (y == x) {
+			alert("Félicitations c'est gagné");
+			break;
+		}
+		}
+		
+		
+</script>
+</body>
+</html>

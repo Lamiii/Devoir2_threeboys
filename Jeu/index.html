@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mini-jeu</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div>
+		<div class="mydiv">
+			<h1 onmouseover="chic()" onmouseout="chic1()" id="cool">Bienvenue au temple Shaolin</h1><br>
+		<h4>Le combat peut maintenant commencer...</h4>
+		</div>
+		
+		
+     <img src="images/mesco.png" id="im1" onclick="Jouer1()" style="float: left;">
+     <img src="images/cr71.png" id="im2" onclick="Jouer2()" style="float: right;">
+     <div id="ima"></div>
+     <script type="text/javascript">
+     	/*function Jouer1() {
+     		//var x = getElementById('im1');
+     		var x = prompt("Entrer votre nom");
+     		//var y = getElementById('im1');
+     		var y = prompt("Entrer un nombre");
+     		
+     		//var a = getElementById('im2');
+     		//var b = getElementById('im2');
+     		var a = prompt("Entrer votre nom");
+     		var b = prompt("Entrer un nombre");
+
+     		if (y>b) {
+     			alert(x+"est le gagnant");
+     		}
+     		else if (y<b) {
+     			alert(a+"est le gagnant");
+     		}
+     		else if (y=b) {
+     			alert("Il n'y a aucun gagnant");
+     		}
+     		else{
+     			alert("Erreur");
+     		}
+
+     	}*/
+     	var x = "";
+     	var y = "";
+     	var a = "";
+     	var b = "";
+     	function Jouer1() {
+     		 x = prompt("Entrer votre nom");
+     		 y = prompt("Entrer un nombre");
+     		
+
+
+     	}
+     	function Jouer2() {
+     		a = prompt("Entrer votre nom");
+     		b = prompt("Entrer un nombre");
+     		gagnant();
+     	}
+     	function gagnant() {
+     		if (y>b) {
+     			alert(x+" est le gagnant");
+     		}
+     		else if (y<b) {
+     			alert(a+" est le gagnant");
+     		}
+     		else if (y=b) {
+     			alert("Il n'y a aucun gagnant");
+     		}
+     		else{
+     			alert("Erreur");
+     		}
+     		var conteneur = document.getElementById('ima');
+     		conteneur.src = "images/messi.jpg";
+ 
+				
+     	}
+
+     	function chic() {
+     		var libre = document.getElementById('cool');
+     		/*x.style.transition: ease 0.3s all;
+     		x.style.transform: translateY(-50%);
+     		x.style.color: rgba(255, 0, 0, 0.5);*/
+     		libre.style.opacity = 0.5;
+			libre.style.filter = alpha(opacity=50);
+
+     	}
+     	function chic1() {
+     		var lib = document.getElementById('cool');
+     		lib.style.filter = "";
+     		lib.style.opacity = "";
+     		//lib.style.color = red;
+
+
+			
+     	}
+     	
+     	
+
+     </script>
+	</div>
+	
+</body>
+</html>

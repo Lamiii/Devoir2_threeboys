@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercice 3</title>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+	
+        
+       <div class="container">
+            <div class="divider"></div>
+            <div class="heading">
+                <h2>Contactez-moi</h2>
+            </div>
+                
+           <div class="row">
+               <div class="col-lg-10 col-lg-offset-1">
+                    <form id="contact-form" method="post" action="" role="form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="firstname" id="prenom">Prénom <span class="blue">*</span></label>
+                                <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom" required="required">
+                                <p class="comments" id="p1"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name" id="nom">Nom <span class="blue">*</span></label>
+                                <input id="name" type="text" name="name" class="form-control" placeholder="Votre Nom" required="required">
+                                <p class="comments" id="p2"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" >Email <span class="blue">*</span></label>
+                                <input id="email" type="text" name="email" class="form-control" placeholder="Votre Email" required="required">
+                                <p class="comments" id="p3"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" >Téléphone</label>
+                                <input id="phone" type="tel" name="phone" class="form-control" placeholder="Votre Téléphone" required="required">
+                                <p class="comments" id="p4"></p>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="message" >Message <span class="blue">*</span></label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Votre Message" rows="4" required="required"></textarea>
+                                <p class="comments" id="p5"></p>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="blue"><strong>* Ces informations sont requises.</strong></p>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" id="button1" value="Envoyer">
+                            </div>    
+                        </div>
+                    </form>
+                </div>
+           </div>
+        </div>
+        <script type="text/javascript">
+        	var bouton = document.getElementById('button1');
+        	bouton.addEventListener('click',Valider);
+        	var prenom = document.getElementById('firstname');
+        	var p1 = document.getElementById('p1');
+        	var nom = document.getElementById('name');
+        	var p2 = document.getElementById('p2');
+        	var email = document.getElementById('email');
+        	var p3 = document.getElementById('p3');
+        	var phone = document.getElementById('phone');
+        	var p4 = document.getElementById('p4');
+        	var message = document.getElementById('message');
+        	var p5 = document.getElementById('p5');
+
+
+
+        	
+
+        	function Valider(e) {
+        		if (prenom.validity.valueMissing) {
+        			e.preventDefault();
+        			p1.textContent = 'Entrez votre prénom';
+        			p1.style.color = 'red';
+
+        		}
+        		else{
+        			e.preventDefault();
+        			p1.textContent = '';
+        			p1.style.color = 'green';
+        		}
+        		if (nom.validity.valueMissing) {
+        			e.preventDefault();
+        			p2.textContent = 'Entrez votre nom';
+        			p2.style.color = 'red';
+
+        		}
+        		else{
+        			e.preventDefault();
+        			p2.textContent = '';
+        			p2.style.color = 'green';
+        		}
+        		if (email.validity.valueMissing) {
+        			e.preventDefault();
+        			p3.textContent = 'Entrez votre mail';
+        			p3.style.color = 'red';
+
+        		}
+        		else{
+        			e.preventDefault();
+        			p3.textContent = '';
+        			p3.style.color = 'green';
+        		}
+        		if (phone.validity.valueMissing) {
+        			e.preventDefault();
+        			p4.textContent = 'Entrez votre numéro de telephone';
+        			p4.style.color = 'red';
+
+        		}
+        		else{
+        			e.preventDefault();
+        			p4.textContent = '';
+        			p4.style.color = 'green';
+        		}
+        		if (message.validity.valueMissing) {
+        			e.preventDefault();
+        			p5.textContent = 'Entrez votre message';
+        			p5.style.color = 'red';
+
+        		}
+        		else{
+        			e.preventDefault();
+        			p5.textContent = '';
+        			p5.style.color = 'green';
+        		}
+        	}
+        </script>
+        
+    
+	     <!--<form class="form-group">
+		
+		<label>Civilité:</label><select>
+
+			<option>Monsieur</option>
+			<option>Madame</option>
+			<option>mademoiselle</option>
+			<option>jeune homme</option>
+		</select><br><br>
+		<label>Nom</label><input type="text" name="nom" placeholder=""><br><br>
+		<label>Prénom</label><input type="text" name="nom" placeholder=""><br><br>
+		<label>Adresse</label><textarea></textarea><br><br>
+		<label>Ville</label><input type="text" name="nom" placeholder="">
+		<label>Code postal:</label><input type="text" name="nom" placeholder=""><br><br>
+		<button id="demande" type="button" onclick="verifierFormulaire();">Envoyer</button>
+	</form>
+
+	<script type="text/javascript">
+		function verifierFormulaire() {
+			var formulaire = document.getElementById('demande');
+			var valid = 1;
+			if (valid == 1) {
+				submit();
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	</script>-->
+
+	</body>
+
+</html>
+	
+
